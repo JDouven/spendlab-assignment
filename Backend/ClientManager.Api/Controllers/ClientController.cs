@@ -21,9 +21,14 @@ namespace ClientManager.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] int page = 0, [FromQuery] int pageSize = 50)
         {
-            return Ok(await _dbContext.Clients.ToListAsync());
+            var entities = await _dbContext.Clients
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return Ok(entities);
         }
 
 
