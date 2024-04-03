@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "client-manager:build:production"
+              "buildTarget": "client-manager:build:production"
             },
             "development": {
-              "browserTarget": "client-manager:build:development"
+              "buildTarget": "client-manager:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "client-manager:build"
+            "buildTarget": "client-manager:build"
           }
         },
         "test": {
