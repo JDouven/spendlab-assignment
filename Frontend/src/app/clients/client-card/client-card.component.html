@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class=""
+      [style]="{
+        background:
+          'url('+ getRandomAvatarUrl(client.id) +')',
+        'background-size': 'cover'
+      }"></div>
+    <mat-card-title>{{ getClientFullName(client) }}</mat-card-title>
+  </mat-card-header>
+</mat-card>
