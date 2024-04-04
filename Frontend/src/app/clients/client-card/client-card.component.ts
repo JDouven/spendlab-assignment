@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 import { Client } from '../../models';
 
 @Component({
   selector: 'app-client-card',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [RouterModule, MatCardModule],
   templateUrl: './client-card.component.html',
 })
 export class ClientCardComponent {
@@ -13,14 +14,5 @@ export class ClientCardComponent {
 
   getClientFullName(client: Client): string {
     return `${client.name} ${client.surname}`;
-  }
-
-  getRandomAvatarUrl(id: number): string {
-    const avatarId = id % 100;
-    return `https://randomuser.me/api/portraits/${this.randomGender()}/${avatarId}.jpg`;
-  }
-
-  private randomGender(): string {
-    return Math.random() > 0.5 ? 'men' : 'women';
   }
 }

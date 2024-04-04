@@ -1,7 +1,18 @@
-@if ($vm | async; as vm) {
-  <div class="max-w-7xl flex flex-col gap-2 py-2">
-    @for (client of vm.clients; track client.id) {
-      <app-client-card [client]="client" />
-    }
-  </div>
+@if (state$ | async; as vm) {
+  @if (vm.loading) {
+    <div class="flex justify-center items-center h-96">
+      <mat-spinner></mat-spinner>
+    </div>
+  } @else {
+    <div class="flex max-w-7xl flex-col gap-2 p-2">
+      @for (client of vm.clients; track client.id) {
+        <app-client-card [client]="client" />
+      }
+      @if (vm.clients.length === 0) {
+        <div class="flex justify-center items-center h-96">
+          <p>No clients found</p>
+        </div>
+      }
+    </div>
+  }
 }

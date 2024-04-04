@@ -1,2 +1,21 @@
-<mat-toolbar color="primary"><span>Client Manager - Frontend</span></mat-toolbar>
+<mat-toolbar color="primary">
+  @if ((isRootRoute$ | async) === false) {
+    <button
+      mat-icon-button
+      class="mr-4"
+      aria-label="Back button"
+      (click)="navigateBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  }
+  <span>Client Manager - Frontend</span>
+  <span class="flex-auto"></span>
+  <button
+      mat-icon-button
+      class="mr-4"
+      aria-label="New client"
+      routerLink="/client/new">
+      <mat-icon>person_add</mat-icon>
+    </button>
+</mat-toolbar>
 <router-outlet></router-outlet>

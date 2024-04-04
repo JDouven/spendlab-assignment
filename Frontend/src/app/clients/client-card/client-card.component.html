@@ -1,11 +1,11 @@
-<mat-card>
+<mat-card [routerLink]="'client/' + client.id" class="hover:bg-background cursor-pointer">
   <mat-card-header>
     <div
       mat-card-avatar
       class=""
       [style]="{
         background:
-          'url('+ getRandomAvatarUrl(client.id) +')',
+          'url('+ client.avatar +')',
         'background-size': 'cover'
       }"></div>
     <mat-card-title>{{ getClientFullName(client) }}</mat-card-title>

@@ -8,4 +8,5 @@ export type Client = {
   houseNumber: string;
   city: string;
   country: string;
+  avatar?: string;
 };

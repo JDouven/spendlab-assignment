@@ -1,0 +1,24 @@
+@if (state$ | async; as vm) {
+  @if (vm.loading === true) {
+    <div class="flex h-96 items-center justify-center">
+      <mat-spinner></mat-spinner>
+    </div>
+  } @else if (vm.loading === false) {
+    <div class="flex flex-col items-stretch p-8">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ vm.client.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ vm.client.email }}</p>
+          <p>{{ vm.client.streetName }} {{ vm.client.houseNumber }}</p>
+          <p>{{ vm.client.postalCode }} {{ vm.client.city }}</p>
+          <p>{{ vm.client.country }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="accent">EDIT</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  }
+}
