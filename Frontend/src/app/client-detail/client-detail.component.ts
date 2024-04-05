@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterModule } from '@angular/router';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable, switchMap, tap } from 'rxjs';
 import { Client } from '../models';
@@ -30,6 +31,7 @@ const initialState: State = {
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     MatProgressSpinnerModule,
     MatCardModule,
     MatButtonModule,
@@ -56,7 +58,10 @@ export class ClientDetailComponent extends ComponentStore<State> {
                 client,
                 loading: false,
               }),
-            () => this.patchState({ loading: false })
+            () => {
+              this.patchState({ loading: false });
+              // TODO: handle error
+            }
           )
         )
       )

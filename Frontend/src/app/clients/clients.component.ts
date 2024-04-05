@@ -48,7 +48,10 @@ export class ClientsComponent extends ComponentStore<State> {
                 loading: false,
                 lastRetrievedPage: 0,
               }),
-            () => this.patchState({ loading: false })
+            () => {
+              this.patchState({ loading: false });
+              // TODO: handle error
+            }
           )
         )
       )
@@ -67,7 +70,10 @@ export class ClientsComponent extends ComponentStore<State> {
                 loading: false,
                 lastRetrievedPage: state.lastRetrievedPage + 1,
               })),
-            () => this.patchState({ loading: false })
+            () => {
+              this.patchState({ loading: false });
+              // TODO: handle error
+            }
           )
         )
       )
