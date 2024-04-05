@@ -1,0 +1,57 @@
+<form class="w-full py-8" id="client-form" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="flex flex-col gap-4 md:flex-row">
+    <mat-form-field class="flex-1">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="John" formControlName="name" />
+      @if (nameControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="flex-1">
+      <mat-label>Surname</mat-label>
+      <input matInput placeholder="Doe" formControlName="surname" />
+      @if (surnameControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <mat-form-field class="w-full">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="johndoe@example.com" formControlName="email" />
+    @if (emailControl.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <div class="flex flex-col gap-4 md:flex-row">
+    <mat-form-field class="flex-1">
+      <mat-label>Street</mat-label>
+      <input matInput placeholder="Maple Street" formControlName="streetName" />
+      @if (streetNameControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="flex-1">
+      <mat-label>House number</mat-label>
+      <input matInput placeholder="18" formControlName="houseNumber" />
+      @if (houseNumberControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <div class="flex flex-col gap-4 md:flex-row">
+    <mat-form-field class="flex-1">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="New York" formControlName="city" />
+      @if (cityControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="flex-1">
+      <mat-label>Country</mat-label>
+      <input matInput placeholder="United States" formControlName="country" />
+      @if (countryControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+  </div>
+</form>

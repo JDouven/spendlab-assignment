@@ -23,6 +23,13 @@ export class ClientService {
       .pipe(map(client => this.addAvatarToClient(client)));
   }
 
+  public updateClient(client: Client): Observable<Client> {
+    return this.http.put<Client>(
+      `http://localhost:5229/api/clients/${client.id}`,
+      client
+    );
+  }
+
   private addAvatarToClient(client: Client): Client {
     return {
       ...client,
