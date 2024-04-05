@@ -8,6 +8,6 @@
           'url('+ client.avatar +')',
         'background-size': 'cover'
       }"></div>
-    <mat-card-title>{{ getClientFullName(client) }}</mat-card-title>
+    <mat-card-title>{{ client | fullName }}</mat-card-title>
   </mat-card-header>
 </mat-card>

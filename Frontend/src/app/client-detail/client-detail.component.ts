@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable, switchMap, tap } from 'rxjs';
 import { Client } from '../models';
+import { FullNamePipe } from '../pipes/full-name.pipe';
 import { ClientService } from '../services/client.service';
 
 type LoadedState = {
@@ -35,6 +36,7 @@ const initialState: State = {
     MatProgressSpinnerModule,
     MatCardModule,
     MatButtonModule,
+    FullNamePipe,
   ],
   templateUrl: './client-detail.component.html',
 })
